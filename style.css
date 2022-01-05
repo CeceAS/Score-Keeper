@@ -1,9 +1,3 @@
-/*
- * Use this CSS to learn some intersting techniques,
- * in case you're wondering how I built the UI.
- * Have fun! 😁
- */
-
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +10,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #444;
   background-color: #f3f3f3;
   height: 100vh;
@@ -35,14 +29,6 @@ nav {
   font-weight: 500;
 }
 
-.logo {
-  height: 5.25rem;
-}
-
-.login {
-  display: flex;
-}
-
 .score__input {
   border: 2px solid #84c54b;
   padding: 0.5rem 0.5rem;
@@ -59,11 +45,6 @@ nav {
   transition: all 0.3s;
   text-transform: uppercase;
   color: #446824;
-}
-
-.login__input:focus {
-  outline: none;
-  border: 1px solid #ccc;
 }
 
 .login__input::placeholder {
@@ -350,7 +331,7 @@ h2 {
   cursor: pointer;
   transition: all 0.3s;
   background-image: linear-gradient(to top left, #39b385, #9be15d);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   /* text-transform: uppercase; */
 }
 
