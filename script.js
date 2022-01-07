@@ -193,6 +193,8 @@ const addPlayers = function () {
 
     addNewScore();
 
+    // console.log('Children:', containerPlayers.children);
+
     // Empty new player input on click:
     document.querySelector('.player__name-input').value = '';
   });
@@ -207,6 +209,21 @@ btnLetsPlay.addEventListener('click', function (e) {
     containerAddPlayers.classList.add('hidden');
     containerAddResetPlayers.classList.remove('hidden');
   }
+
+  const rows = Array.from(containerPlayers.children);
+
+  // note: option 1:
+  // const rows = Array.from(containerPlayers.children);
+  // console.log('rows:', rows);
+  // rows.forEach(function (row, i) {
+  //   if (i % 4 === 0) {
+  //     row.style.setProperty('--primary-color', '#da489d');
+  //     row.style.setProperty(
+  //       '--webkit-gradient',
+  //       'linear-gradient(to bottom right, #f953c6, #b91d73)'
+  //     );
+  //   }
+  // });
 });
 
 // Show Add player container when "Add More Players" is clicked:
@@ -228,3 +245,21 @@ btnAddMorePlayers.addEventListener('click', function (e) {
 
 //   addPlayers();
 // });
+
+// note: colours:
+
+// linear-gradient(to top left, #ffb003, #ffcb03);
+
+// linear-gradient(to top left, #39b385, #9be15d);
+
+// linear-gradient(to top left, #e52a5a, #ff585f);
+
+// const changeColors = function () {
+//   const rows = containerPlayers.children;
+
+//   console.log(rows);
+//   rows.forEach(function (row, i) {
+//     // if (row === "")
+//     console.log(row);
+//   });
+// };
