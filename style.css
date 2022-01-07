@@ -131,7 +131,7 @@ nav p {
   .form__btn--add-player,
   .lets__play-btn,
   .player__name-input {
-    width: 75%;
+    width: 100%;
   }
 }
 
