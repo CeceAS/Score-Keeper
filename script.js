@@ -47,7 +47,7 @@ const inputPlayerName = document.querySelector('.player__name-input');
 const btnsAddScore = document.querySelectorAll('.form__btn--add-score');
 const btnAddPlayer = document.querySelector('.form__btn--add-player');
 const btnAddMorePlayers = document.querySelector('.add-more-players');
-const btnResetPlayers = document.querySelector('.reset-players');
+// const btnResetPlayers = document.querySelector('.reset-players');
 const btnLetsPlay = document.querySelector('.lets__play-btn');
 
 // const playerNamesArray = document.querySelectorAll('.player__name');
@@ -107,7 +107,7 @@ const calcAndDisplayTotalScore = function () {
     scoreDisplaysArray[i].textContent = allPlayers[i].totalScore;
 
     // Add new score to displayed array:
-    let displayedScoreArr = player.scores.join(', ');
+    let displayedScoreArr = player.scores.slice(1).join(', ');
     labelTotalScoreArray[i].textContent = displayedScoreArr;
   });
 };
@@ -126,7 +126,7 @@ const addNewScore = function () {
       e.preventDefault();
       const newScore = +scoreInputsArray[i].value;
 
-      if (newScore > 0) {
+      if (newScore !== 0) {
         allPlayers[i].scores.push(newScore);
         console.log(allPlayers);
       }
@@ -166,17 +166,20 @@ const addPlayers = function () {
       <div class="player__name-container">
         <p class="player__number-label">Player ${i + 1}</p>
         <div class="player__name">${curPlayer.name}</div>
-        <div><p><strong>Scores: </strong><span class="scores-array"></span></p></div>
+        <div><p><strong>Scores:  </strong><span class="scores-array"></span></p></div>
       </div>
+      <div class="flex-row">
       <div class="score__input-container">
         <input id="" type="number" class="score__input form__input--amount"/>
         <button id="" class="btn form__btn form__btn--add-score">+</button>
       </div>
-      <div>
+      <div class="total__score-container">
         <p class="score-label">Score</p>
         <div id="${curPlayer.name}-display-score" class="player__score ${
         curPlayer.name
-      }"></div>
+      }">
+        0</div>
+      </div>
       </div>
     </div>
     
@@ -196,3 +199,32 @@ const addPlayers = function () {
 };
 
 addPlayers();
+
+// Hide add player container when "Let's Play is clicked:"
+
+btnLetsPlay.addEventListener('click', function (e) {
+  if (!containerPlayers.classList.contains('hidden')) {
+    containerAddPlayers.classList.add('hidden');
+    containerAddResetPlayers.classList.remove('hidden');
+  }
+});
+
+// Show Add player container when "Add More Players" is clicked:
+
+btnAddMorePlayers.addEventListener('click', function (e) {
+  containerAddPlayers.classList.remove('hidden');
+  btnLetsPlay.textContent = 'Keep Playing';
+  containerAddResetPlayers.classList.add('hidden');
+});
+
+// Reset Players when "Reset Players" is clicked:
+
+// btnResetPlayers.addEventListener('click', function (e) {
+//   containerAddPlayers.classList.remove('hidden');
+//   containerAddResetPlayers.classList.add('hidden');
+//   containerPlayers.classList.add('remove');
+
+//   // Empty the players object:
+
+//   addPlayers();
+// });
