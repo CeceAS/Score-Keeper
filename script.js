@@ -34,6 +34,8 @@ const containerAddResetPlayers = document.querySelector(
   '.add_resetplayers-container'
 );
 
+const nav = document.querySelector('nav');
+
 const labelPlayerName = document.querySelector('player__name');
 const labelTotalScore = document.querySelectorAll('.player__score');
 
@@ -210,7 +212,7 @@ btnLetsPlay.addEventListener('click', function (e) {
     containerAddResetPlayers.classList.remove('hidden');
   }
 
-  const rows = Array.from(containerPlayers.children);
+  nav.querySelector('p').classList.add('hidden');
 
   // note: option 1:
   // const rows = Array.from(containerPlayers.children);
@@ -232,6 +234,7 @@ btnAddMorePlayers.addEventListener('click', function (e) {
   containerAddPlayers.classList.remove('hidden');
   btnLetsPlay.textContent = 'Keep Playing';
   containerAddResetPlayers.classList.add('hidden');
+  nav.querySelector('p').classList.remove('hidden');
 });
 
 // Reset Players when "Reset Players" is clicked:
