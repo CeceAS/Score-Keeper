@@ -138,6 +138,69 @@ const addNewScore = function () {
 
       // Emptying input once score is added:
       scoreInputsArray[i].value = '';
+
+      // Display current winner:
+      document.querySelector('.winner-container-title').classList.add('hidden');
+
+      const scoresMap = new Map();
+
+      allPlayers.forEach(player => {
+        scoresMap.set(player.name, player.totalScore);
+      });
+
+      const sortedScoresMap = new Map(
+        [...scoresMap.entries()].sort((a, b) => b[1] - a[1])
+      );
+
+      const mapIterator = sortedScoresMap.entries();
+
+      const playersOrdered = [];
+      const scoresOrdered = [];
+      const winnerContainer = document.querySelector('.winner');
+      let winners = [];
+      const winnerTie = document.querySelector('.winner-tie');
+      let winnersTextStart;
+      let winnersTextEnd;
+
+      for (const [playerName, score] of mapIterator) {
+        playersOrdered.push(playerName);
+        scoresOrdered.push(score);
+      }
+
+      console.log('players:', playersOrdered, 'scores', scoresOrdered);
+
+      // if there's ties or no ties:
+      if (scoresOrdered[0] !== scoresOrdered[1]) {
+        winnerContainer.innerHTML = `
+        <h2><span class="winner-title">${
+          playersOrdered[0]
+        }</span> is winning with <span class="winner-title">${
+          scoresOrdered[0]
+        }</span> ${scoresOrdered[0] > 1 ? 'points' : 'point'} 🥳</h2>`;
+      }
+
+      if (scoresOrdered[0] === scoresOrdered[1]) {
+        winnerContainer.textContent = '';
+        winnerTie.classList.remove('hidden');
+
+        scoresOrdered.forEach((score, i, arr) => {
+          if (arr[1] === score) {
+            winners.push(playersOrdered[i]);
+          }
+        });
+
+        if (winners.length === 2) {
+          winnersTextStart = winners[0];
+        }
+        if (winners.length > 2) {
+          winnersTextStart = winners.slice(0, -1).join(', ');
+        }
+
+        console.log('winners are:', winners);
+        winnersTextEnd = winners.slice(-1);
+
+        winnerContainer.innerHTML = `<h2><span class="winner-title">${winnersTextStart}</span> and <span class="winner-title">${winnersTextEnd}</span> are all tied with score of <span class="winner-title">${scoresOrdered[0]}</span> 🥳</h2>`;
+      }
     });
   });
 };

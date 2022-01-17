@@ -18,7 +18,12 @@
     <!-- TOP NAVIGATION -->
     <nav>
       <h1 class="welcome">Score Keeper</h1>
-      <p>Welcome to Score Keeper! Add your players below, and click "Let's Play" to start recording scores. To add more players after your game has started, click "Add More Players" and to restart the game, simply refresh the page.</p>
+      <p>
+        Welcome to Score Keeper! Add your players below, and click "Let's Play"
+        to start recording scores. To add more players after your game has
+        started, click "Add More Players" and to restart the game, simply
+        refresh the page.
+      </p>
     </nav>
 
     <main class="app">
@@ -36,34 +41,17 @@
       </div>
       <div class="add_resetplayers-container hidden">
         <button class="form__btn add-more-players">Add More Players</button>
-      
       </div>
 
       <!-- PLAYERS AND SCORES -->
-      <div class="players-container hidden">
-        <!-- 
+      <div class="players-container hidden"></div>
 
-         -->
-        <!-- <div class="player__row">
-          <div class="">
-            <p class="player__number-label">Player X</p>
-            <div class="player__name">Example</div>
-          </div>
-          <div class="score__input-container">
-            <input type="number" class="score__input form__input--amount" />
-            <button class="btn form__btn form__btn--add-score">+</button>
-          </div>
-          <div>
-            <p class="score-label">Score</p>
-            <div class="player__score">0</div> -->
-            <!-- 
-
-             -->
-
-
-             <div></div>
-          </div>
-        </div>
+      <div class="winner-container">
+        <h2 class="winner-container-title">Who's Winning?</h2>
+        <h3 class="winner-tie hidden">
+          <span class="">It's a tie!</span>
+        </h3>
+        <div class="winner"></div>
       </div>
     </main>
 

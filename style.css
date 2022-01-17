@@ -18,7 +18,7 @@ body {
   font-family: 'Poppins', sans-serif;
   color: #444;
   background-color: #f3f3f3;
-  height: 100vh;
+  height: fit-content;
   padding: 2rem;
 }
 
@@ -67,7 +67,7 @@ p {
 }
 
 nav p {
-  margin: 20px auto 0px;
+  margin: 20px auto;
   font-size: 16px;
   text-align: center;
 }
@@ -76,9 +76,9 @@ nav p {
 .app {
   position: relative;
   max-width: 100rem;
-  margin: 4rem auto;
-  display: grid;
-  grid-template-columns: 4fr;
+  margin: 0rem auto 4rem;
+  display: flex;
+  flex-direction: column;
   grid-template-rows: auto repeat(3, 15rem) auto;
   gap: 2rem;
 
@@ -178,10 +178,10 @@ nav p {
 }
 
 .player__name {
-  font-size: 1.8rem;
-  letter-spacing: 2px;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 900;
   color: #fff;
   padding: 0.1rem 1rem;
   border-radius: 10rem;
@@ -266,6 +266,29 @@ nav p {
   .total__score-container {
     max-width: none;
   }
+}
+
+/*** Who's Winning Container ***/
+
+.winner-container {
+  /* grid-row: 2 / span 3; */
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 15px;
+  text-align: center;
+}
+
+.winner-container .winner-title {
+  font-size: 22px;
+  font-weight: bolder;
+  color: var(--primary-color);
+  background: var(--webkit-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.winner-container h2 {
+  margin: 0px;
 }
 
 /* Formatting colours */
