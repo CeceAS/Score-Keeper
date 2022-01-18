@@ -24,8 +24,6 @@
 // player adds name -> name appears in players.
 // game starts. First player scores, socre is added to that player -> total score is updated
 
-// note:
-
 // UNIT: DOM Elements:
 
 const containerPlayers = document.querySelector('.players-container');
@@ -70,18 +68,6 @@ const playerstest = [
 ];
 
 let allPlayers = [];
-// {
-//   playerName: 'Cynthia',
-//   scores: [10, 25, 5, 6],
-//   totalScore: 0,
-// },
-// {
-//   playerName: 'Brayden',
-//   scores: [10, 5, 5, 6],
-//   totalScore: 0,
-// },
-
-// const scores = [];
 
 // UNIT: Data:
 
@@ -90,6 +76,12 @@ const btnsAddScoreArray = Array.from(btnsAddScore);
 
 // array of inputs:
 const newScoreInputsArray = Array.from(newScoreInputs);
+
+// UNIT: Refresh if user confirms:
+
+window.onbeforeunload = function (e) {
+  return confirm('Confirm refresh');
+};
 
 // UNIT: Functions
 
@@ -171,6 +163,7 @@ const addNewScore = function () {
 
       // if there's ties or no ties:
       if (scoresOrdered[0] !== scoresOrdered[1]) {
+        winnerTie.classList.add('hidden');
         winnerContainer.innerHTML = `
         <h2><span class="winner-title">${
           playersOrdered[0]
@@ -199,15 +192,11 @@ const addNewScore = function () {
         console.log('winners are:', winners);
         winnersTextEnd = winners.slice(-1);
 
-        winnerContainer.innerHTML = `<h2><span class="winner-title">${winnersTextStart}</span> and <span class="winner-title">${winnersTextEnd}</span> are all tied with score of <span class="winner-title">${scoresOrdered[0]}</span> 🥳</h2>`;
+        winnerContainer.innerHTML = `<h2><span class="winner-title">${winnersTextStart}</span> and <span class="winner-title">${winnersTextEnd}</span> are tied with a score of <span class="winner-title">${scoresOrdered[0]}</span> 🥳</h2>`;
       }
     });
   });
 };
-
-// Try this function:
-
-// UNIT: Adding players:
 
 const addPlayers = function () {
   btnAddPlayer.addEventListener('click', function () {
@@ -276,19 +265,6 @@ btnLetsPlay.addEventListener('click', function (e) {
   }
 
   nav.querySelector('p').classList.add('hidden');
-
-  // note: option 1:
-  // const rows = Array.from(containerPlayers.children);
-  // console.log('rows:', rows);
-  // rows.forEach(function (row, i) {
-  //   if (i % 4 === 0) {
-  //     row.style.setProperty('--primary-color', '#da489d');
-  //     row.style.setProperty(
-  //       '--webkit-gradient',
-  //       'linear-gradient(to bottom right, #f953c6, #b91d73)'
-  //     );
-  //   }
-  // });
 });
 
 // Show Add player container when "Add More Players" is clicked:
@@ -299,33 +275,3 @@ btnAddMorePlayers.addEventListener('click', function (e) {
   containerAddResetPlayers.classList.add('hidden');
   nav.querySelector('p').classList.remove('hidden');
 });
-
-// Reset Players when "Reset Players" is clicked:
-
-// btnResetPlayers.addEventListener('click', function (e) {
-//   containerAddPlayers.classList.remove('hidden');
-//   containerAddResetPlayers.classList.add('hidden');
-//   containerPlayers.classList.add('remove');
-
-//   // Empty the players object:
-
-//   addPlayers();
-// });
-
-// note: colours:
-
-// linear-gradient(to top left, #ffb003, #ffcb03);
-
-// linear-gradient(to top left, #39b385, #9be15d);
-
-// linear-gradient(to top left, #e52a5a, #ff585f);
-
-// const changeColors = function () {
-//   const rows = containerPlayers.children;
-
-//   console.log(rows);
-//   rows.forEach(function (row, i) {
-//     // if (row === "")
-//     console.log(row);
-//   });
-// };
