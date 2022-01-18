@@ -18,12 +18,15 @@
     <!-- TOP NAVIGATION -->
     <nav>
       <h1 class="welcome">Score Keeper</h1>
-      <p>
-        Welcome to Score Keeper! Add your players below, and click "Let's Play"
-        to start recording scores. To add more players after your game has
-        started, click "Add More Players" and to restart the game, simply
-        refresh the page.
-      </p>
+      <div class="modal">
+        <h6 class="btn-close-modal">close</h6>
+        <p>
+          Welcome to Score Keeper! Add your players below, and click "Let's
+          Play" to start recording scores. To add more players after your game
+          has started, click "Add More Players" and to restart the game, simply
+          refresh the page.
+        </p>
+      </div>
     </nav>
 
     <main class="app">
@@ -53,7 +56,11 @@
         </h3>
         <div class="winner"></div>
       </div>
+      <div class="show-modal">
+        <button class="form__btn btn-show-modal">Instructions</button>
+      </div>
     </main>
+    <div class="overlay"></div>
 
     <script src="script.js"></script>
   </body>

@@ -32,6 +32,11 @@ const containerAddResetPlayers = document.querySelector(
   '.add_resetplayers-container'
 );
 
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.btn-close-modal');
+const btnOpenModal = document.querySelector('.btn-show-modal');
+
 const nav = document.querySelector('nav');
 
 const labelPlayerName = document.querySelector('player__name');
@@ -51,6 +56,30 @@ const btnAddMorePlayers = document.querySelector('.add-more-players');
 const btnLetsPlay = document.querySelector('.lets__play-btn');
 
 // const playerNamesArray = document.querySelectorAll('.player__name');
+
+// UNIT: Show & Hide Modal
+
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+const openModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+btnCloseModal.addEventListener('click', closeModal);
+
+overlay.addEventListener('click', closeModal);
+
+btnOpenModal.addEventListener('click', openModal);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
 
 // UNIT:  Default players:
 
