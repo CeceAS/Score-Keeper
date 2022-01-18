@@ -230,9 +230,7 @@ const addNewScore = function () {
 const addPlayers = function () {
   btnAddPlayer.addEventListener('click', function () {
     if (document.querySelector('.player__name-input').value.length > 0) {
-      const playerName = document
-        .querySelector('.player__name-input')
-        .value.toLowerCase();
+      const playerName = document.querySelector('.player__name-input').value;
       let playerObject = {
         name: playerName,
         scores: [0],
