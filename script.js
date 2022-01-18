@@ -108,9 +108,9 @@ const newScoreInputsArray = Array.from(newScoreInputs);
 
 // UNIT: Refresh if user confirms:
 
-window.onbeforeunload = function (e) {
-  return confirm('Confirm refresh');
-};
+window.addEventListener('beforeunload', event => {
+  event.returnValue = `Are you sure you want to leave?`;
+});
 
 // UNIT: Functions
 
@@ -229,22 +229,23 @@ const addNewScore = function () {
 
 const addPlayers = function () {
   btnAddPlayer.addEventListener('click', function () {
-    const playerName = document
-      .querySelector('.player__name-input')
-      .value.toLowerCase();
-    let playerObject = {
-      name: playerName,
-      scores: [0],
-      totalScore: 0,
-    };
+    if (document.querySelector('.player__name-input').value.length > 0) {
+      const playerName = document
+        .querySelector('.player__name-input')
+        .value.toLowerCase();
+      let playerObject = {
+        name: playerName,
+        scores: [0],
+        totalScore: 0,
+      };
 
-    allPlayers.push(playerObject);
-    console.log(playerObject);
-    console.log(allPlayers);
+      allPlayers.push(playerObject);
+      console.log(playerObject);
+      console.log(allPlayers);
 
-    let html;
-    allPlayers.forEach(function (curPlayer, i) {
-      html = `
+      let html;
+      allPlayers.forEach(function (curPlayer, i) {
+        html = `
       <div class="player__row">
       <div class="player__name-container">
         <p class="player__number-label">Player ${i + 1}</p>
@@ -259,27 +260,28 @@ const addPlayers = function () {
       <div class="total__score-container">
         <p class="score-label">Score</p>
         <div id="${curPlayer.name}-display-score" class="player__score ${
-        curPlayer.name
-      }">
+          curPlayer.name
+        }">
         0</div>
       </div>
       </div>
     </div>
     
       `;
-    });
+      });
 
-    // remove hidden class from container of players:
-    containerPlayers.classList.remove('hidden');
+      // remove hidden class from container of players:
+      containerPlayers.classList.remove('hidden');
 
-    containerPlayers.insertAdjacentHTML('beforeend', html);
+      containerPlayers.insertAdjacentHTML('beforeend', html);
 
-    addNewScore();
+      addNewScore();
 
-    // console.log('Children:', containerPlayers.children);
+      // console.log('Children:', containerPlayers.children);
 
-    // Empty new player input on click:
-    document.querySelector('.player__name-input').value = '';
+      // Empty new player input on click:
+      document.querySelector('.player__name-input').value = '';
+    }
   });
 };
 

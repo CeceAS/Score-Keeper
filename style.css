@@ -43,7 +43,7 @@ input {
 /* UI */
 
 .hidden {
-  display: none;
+  display: none !important;
   transition: all 1s;
 }
 
@@ -69,8 +69,15 @@ p {
 }
 
 nav p {
-  margin: 20px auto;
+  font-size: 12px;
+  text-align: left;
+  line-height: 1.6;
+  width: 90%;
+}
+
+nav h6 {
   font-size: 16px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -97,12 +104,15 @@ nav p {
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 80%;
+  display: flex;
   background-color: #fff;
   padding: 2rem;
-  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4rem 6rem rgb(0 0 0 / 30%);
   z-index: 1000;
   transition: all 0.5s;
   border-radius: 1rem;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn-close-modal {
@@ -111,6 +121,7 @@ nav p {
   color: #f37335;
   top: 15px;
   right: 10px;
+  font-size: 11px;
 }
 
 .show-modal {
@@ -120,6 +131,16 @@ nav p {
 }
 
 .btn-show-modal {
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-show-modal:hover {
+  border-bottom: 2px solid #f37335;
+  color: #f37335;
+  transition-duration: 500ms;
 }
 
 .overlay {
