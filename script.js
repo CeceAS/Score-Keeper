@@ -67,7 +67,6 @@ const closeModal = function () {
 const openModal = function () {
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
-  nav.querySelector('p').classList.remove('hidden');
 };
 
 btnCloseModal.addEventListener('click', closeModal);
@@ -293,8 +292,6 @@ btnLetsPlay.addEventListener('click', function (e) {
     containerAddPlayers.classList.add('hidden');
     containerAddResetPlayers.classList.remove('hidden');
   }
-
-  nav.querySelector('p').classList.add('hidden');
 });
 
 // Show Add player container when "Add More Players" is clicked:
