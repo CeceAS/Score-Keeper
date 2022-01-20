@@ -194,11 +194,7 @@ const addNewScore = function () {
       if (scoresOrdered[0] !== scoresOrdered[1]) {
         winnerTie.classList.add('hidden');
         winnerContainer.innerHTML = `
-        <h2><span class="winner-title">${
-          playersOrdered[0]
-        }</span> is winning with <span class="winner-title">${
-          scoresOrdered[0]
-        }</span> ${scoresOrdered[0] > 1 ? 'points' : 'point'} 🥳</h2>`;
+        <h2><span class="winner-title">${playersOrdered[0]}</span> is winning with a score of <span class="winner-title">${scoresOrdered[0]}</span> 🥳</h2>`;
       }
 
       if (scoresOrdered[0] === scoresOrdered[1]) {
