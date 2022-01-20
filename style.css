@@ -18,8 +18,10 @@ body {
   font-family: 'Poppins', sans-serif;
   color: #444;
   background-color: #f3f3f3;
-  height: fit-content;
-  padding: 2rem;
+  min-height: 100vh;
+  padding: 2rem 2rem 0 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
@@ -58,10 +60,10 @@ h1 {
   font-weight: bolder;
   color: var(--primary-color);
   background: var(--webkit-gradient);
-  margin: 0px 0px 20px;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 
 p {
@@ -87,7 +89,7 @@ nav h6 {
 .app {
   position: relative;
   max-width: 100rem;
-  margin: 0rem auto 4rem;
+  /* margin: 0rem auto 4rem; */
   display: flex;
   flex-direction: column;
   grid-template-rows: auto repeat(3, 15rem) auto;
@@ -131,6 +133,7 @@ nav h6 {
   display: flex;
   width: 100%;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
 .btn-show-modal {
@@ -452,4 +455,9 @@ h2 {
 
 .timer {
   font-weight: 600;
+}
+
+footer {
+  margin-top: auto;
+  padding: 10px 5%;
 }
