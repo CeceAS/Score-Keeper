@@ -88,7 +88,7 @@ nav h6 {
 /* MAIN */
 .app {
   position: relative;
-  max-width: 100rem;
+  /* max-width: 100rem; */
   /* margin: 0rem auto 4rem; */
   display: flex;
   flex-direction: column;
