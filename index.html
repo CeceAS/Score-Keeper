@@ -22,6 +22,8 @@
         <h6><strong>Welcome to The Score Keeper!</strong></h6>
         <p>
           <em>How to use Score Keeper:</em> <br />
+          • Type in your player's names and <strong>choose their colour</strong
+          ><br />
           • To add your players, click <strong>Add Player</strong> <br />• Click
           <strong>Let's Play</strong> when all players are added<br />• To add
           more players after your game has started, click
@@ -36,17 +38,28 @@
     <main class="app">
       <div class="add__players-container">
         <h2 class="">Add Players</h2>
-        <input
-          type="text"
-          class="player__name-input"
-          placeholder="Player's Name"
-        />
-        <button class="form__btn form__btn--add-player">Add Player</button>
-        <div>
+        <div class="player-form">
+          <div class="player-name-div">
+            <input
+              type="text"
+              class="player__name-input"
+              placeholder="Player's Name"
+            />
+          </div>
+
+          <div class="color-picker-div">
+            <h5>Choose your color:</h5>
+            <input type="color" value="#00b4db" id="color-picker" />
+          </div>
+          <div class="add-player-btn-div">
+            <button class="form__btn form__btn--add-player">Add Player</button>
+          </div>
+        </div>
+        <div class="lets__play-div">
           <button class="form__btn lets__play-btn">Let's Play!</button>
         </div>
       </div>
-      <div class="add_resetplayers-container hidden">
+      <div class="add_more_players-container hidden">
         <button class="form__btn add-more-players">Add More Players</button>
       </div>
 
@@ -68,6 +81,7 @@
     <footer>
       <h1 class="welcome">TheScoreKeeper.io</h1>
     </footer>
+    <!-- <script src="script-alternate.js"></script> -->
     <script src="script.js"></script>
   </body>
 </html>

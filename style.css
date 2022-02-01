@@ -1,6 +1,8 @@
 :root {
   --webkit-gradient: linear-gradient(to bottom right, #fdc830, #f37335);
   --primary-color: #f29f33;
+
+  --player-color: #ff0000;
 }
 
 * {
@@ -53,6 +55,11 @@ input {
 
 h1 {
   font-size: 40px;
+}
+
+h5 {
+  font-size: 12px;
+  margin-bottom: 5px;
 }
 
 .welcome {
@@ -141,6 +148,7 @@ nav h6 {
   border-bottom: 2px solid var(--primary-color);
   color: var(--primary-color);
   font-family: 'Poppins', sans-serif;
+  outline: none;
 }
 
 .btn-show-modal:hover {
@@ -169,6 +177,22 @@ nav h6 {
   overflow: scroll;
   padding: 15px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-form,
+.player-name-div,
+.color-picker-div,
+.add-player-btn-div {
+  width: 90%;
+}
+
+.player-form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
 }
 
 .player__name-input {
@@ -177,7 +201,7 @@ nav h6 {
   font-size: 1.6rem;
   font-family: inherit;
   text-align: center;
-  /* width: 8rem; */
+  width: 100%;
   border-radius: 10rem;
   margin-right: 1rem;
   margin-left: auto;
@@ -186,28 +210,85 @@ nav h6 {
   outline: none;
 }
 
+.form__btn--add-player {
+  width: 100%;
+}
+
+.color-picker-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+}
+
+#color-picker {
+  /* border-radius: 100px; */
+  width: 39px;
+  height: 39px;
+  border: 2px solid var(--primary-color);
+}
+
+input[type='color'] {
+  -webkit-appearance: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+}
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border-radius: 100%;
+}
+input[type='color']::-webkit-color-swatch {
+  border: none;
+  border-radius: 100%;
+}
+
+.lets__play-div {
+  width: 90%;
+}
+
 .lets__play-btn {
-  width: 80%;
+  width: 100%;
   margin-top: 20px;
 }
 
-.add_resetplayers-container {
-  text-align: center;
+.add_more_players-container {
+  display: flex;
+  justify-content: center;
 }
 
-@media screen and (max-width: 375px) {
-  .player__name-input {
-    margin-bottom: 10px;
-    width: 75%;
+@media screen and (max-width: 450px) {
+  .player-form,
+  .player-name-div,
+  .color-picker-div,
+  .add-player-btn-div {
+    width: 90%;
   }
 
-  .form__btn--add-player,
-  .lets__play-btn,
-  .player__name-input {
+  .player__name-input,
+  .form__btn--add-player {
+    margin-bottom: 10px;
     width: 100%;
   }
-}
 
+  .player-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .color-picker-div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    width: 90%;
+  }
+
+  .lets__play-btn {
+    width: 90%;
+  }
+}
 /* PLAYERS CONTAINER*/
 .players-container {
   background-color: #fff;
@@ -226,21 +307,19 @@ nav h6 {
 .player__row:nth-child(even) {
   --webkit-gradient: linear-gradient(to bottom right, #00b4db, #0083b0);
   --primary-color: #429ec8;
+  --player-color: red;
 }
 
 .player__row:nth-child(odd) {
   --webkit-gradient: linear-gradient(to bottom right, #f953c6, #b91d73);
   --primary-color: #da489d;
-}
-
-/* .player__row:nth-child(4n + 4) {
-
+  --player-color: blue;
 }
 
 .player__row:nth-child(5n + 5) {
   --webkit-gradient: linear-gradient(to bottom right, #ed213a, #93291e);
   --primary-color: #c3332d;
-} */
+}
 
 .player__name-container {
   min-width: 33%;
@@ -259,7 +338,7 @@ nav h6 {
   padding: 0.1rem 1rem;
   border-radius: 10rem;
   /* margin-right: 2rem; */
-  background-image: var(--webkit-gradient);
+  /* background-image: var(--webkit-gradient); */
   /* background-color: pink; */
   min-width: 17px;
   text-align: center;
@@ -325,7 +404,6 @@ nav h6 {
   }
 
   .player__name-input {
-    margin: 0px 0px 10px 0px;
     outline: none;
   }
 
@@ -361,6 +439,7 @@ nav h6 {
   color: var(--primary-color);
   background: var(--webkit-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -439,6 +518,7 @@ h2 {
   background-image: var(--webkit-gradient);
   font-family: 'Poppins', sans-serif;
   /* text-transform: uppercase; */
+  max-height: 39px;
 }
 
 .form__btn:focus {
