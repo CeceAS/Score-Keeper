@@ -557,9 +557,9 @@ footer div {
   font-size: 8px;
 }
 
-#feedback button {
-  border: none;
-  border-bottom: 2px solid var(--primary-color);
+#feedback a {
+  /* border: none;
+  border-bottom: 2px solid var(--primary-color); */
   outline: none;
   color: var(--primary-color);
   font-size: 8px;
