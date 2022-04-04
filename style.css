@@ -57,21 +57,20 @@ h1 {
   font-size: 40px;
 }
 
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
 h5 {
   font-size: 12px;
   margin-bottom: 5px;
 }
 
-.welcome {
-  font-size: 1.25rem;
-  font-weight: bolder;
-  color: var(--primary-color);
-  background: var(--webkit-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-}
+
 
 p {
   font-size: 12px;
@@ -92,7 +91,18 @@ nav h6 {
   text-align: center;
 }
 
-/* MAIN */
+.welcome {
+  font-size: 1.25rem;
+  font-weight: bolder;
+  color: var(--primary-color);
+  background: var(--webkit-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+/*** MAIN ***/
 .app {
   position: relative;
   /* max-width: 100rem; */
@@ -168,7 +178,8 @@ nav h6 {
   z-index: 100;
   transition: all 0.5s;
 }
-/* ADD PLAYERS */
+
+/*** Adding Players ***/
 
 .add__players-container {
   /* grid-row: 2 / span 3; */
@@ -289,7 +300,9 @@ input[type='color']::-webkit-color-swatch {
     width: 90%;
   }
 }
-/* PLAYERS CONTAINER*/
+
+/*** Players Container ***/
+
 .players-container {
   background-color: #fff;
   border-radius: 1rem;
@@ -302,23 +315,6 @@ input[type='color']::-webkit-color-swatch {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #eee;
-}
-
-.player__row:nth-child(even) {
-  --webkit-gradient: linear-gradient(to bottom right, #00b4db, #0083b0);
-  --primary-color: #429ec8;
-  --player-color: red;
-}
-
-.player__row:nth-child(odd) {
-  --webkit-gradient: linear-gradient(to bottom right, #f953c6, #b91d73);
-  --primary-color: #da489d;
-  --player-color: blue;
-}
-
-.player__row:nth-child(5n + 5) {
-  --webkit-gradient: linear-gradient(to bottom right, #ed213a, #93291e);
-  --primary-color: #c3332d;
 }
 
 .player__name-container {
@@ -345,7 +341,7 @@ input[type='color']::-webkit-color-swatch {
   margin-bottom: 10px;
 }
 
-/* Scores */
+/*** Scores ***/
 .flex-row {
   display: flex;
   width: 100%;
@@ -357,8 +353,6 @@ input[type='color']::-webkit-color-swatch {
   max-width: 20%;
   display: flex;
 }
-
-/* Scores */
 
 .score__input {
   border: 2px solid var(--primary-color);
@@ -447,33 +441,14 @@ input[type='color']::-webkit-color-swatch {
   margin: 0px;
 }
 
-/* Formatting colours */
-
-/****/
-
-.movements__date {
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: #666;
-  margin: auto;
-}
-
 .score-label {
   text-align: center;
 }
+
 .player__score {
   font-size: 2rem;
   margin-left: auto;
   line-height: 17px;
-}
-
-h2 {
-  margin-bottom: 1.5rem;
-  font-size: 1.7rem;
-  font-weight: 600;
-  color: #333;
-  text-align: center;
 }
 
 .form {
@@ -526,17 +501,7 @@ h2 {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.logout-timer {
-  padding: 0 0.3rem;
-  margin-top: 1.9rem;
-  text-align: right;
-  font-size: 1.25rem;
-}
-
-.timer {
-  font-weight: 600;
-}
-
+/*** Footer ***/
 footer {
   margin-top: auto;
   padding: 10px 5%;
